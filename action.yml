@@ -1,0 +1,54 @@
+name: "SUSE OBS API Fetch"
+author: "iHub TO <mail@ihub.to>"
+description: "GitHub Action to get SUSE OBS API responses and save them to repository."
+branding:
+  icon: "anchor"
+  color: "green"
+inputs:
+  git_repo:
+    description: "Git Repository"
+    required: true
+  git_user:
+    description: "Git User"
+    required: true
+  git_email:
+    description: "Git E-mail"
+    required: true
+  git_token:
+    description: "Git Token"
+    required: true
+  api_url:
+    description: "OBS API URL"
+    required: true
+    default: "https://api.opensuse.org"
+  api_dir:
+    description: "OBS API Local Directory"
+    required: true
+    default: "api/obs"
+  api_project:
+    description: "OBS API Project"
+    required: true
+  api_user:
+    description: "OBS API User Name"
+    required: true
+  api_password:
+    description: "OBS API User Password"
+    required: true
+  bot_info:
+    description: "Bot Information"
+    required: true
+    default: "Email: mail@example.com"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.git_repo }}
+    - ${{ inputs.git_user }}
+    - ${{ inputs.git_email }}
+    - ${{ inputs.git_token }}
+    - ${{ inputs.api_url }}
+    - ${{ inputs.api_dir }}
+    - ${{ inputs.api_project }}
+    - ${{ inputs.api_user }}
+    - ${{ inputs.api_password }}
+    - ${{ inputs.bot_info }}
