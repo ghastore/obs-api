@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL "name"="SUSE OBS API Fetch"
 LABEL "description"="GitHub Action to get SUSE OBS API responses and save them to repository."
-LABEL "maintainer"="iHub TO <mail@ihub.to>"
+LABEL "maintainer"="Kai Kimera <mail@kai.kim>"
 LABEL "repository"="https://github.com/ghastore/obs-api"
 LABEL "homepage"="https://github.com/ghastore"
 
